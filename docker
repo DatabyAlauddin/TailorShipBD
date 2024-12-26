@@ -1,11 +1,21 @@
-# Use the SDK image to restore dependencies and build the app
-FROM mcr.microsoft.com/dotnet/sdk:6 AS build
+FROM microsoft/dotnet:6.0-sdk AS build-env
 
-# Set the working directory inside the container to /app
 WORKDIR /app
 
-# Copy all project files from your local machine into the /app directory in the container
 COPY . .
 
-# Run dotnet restore to restore dependencies inside the /app directory
 RUN dotnet restore
+
+RUN dotnet publish -c Release -o /app/publish
+
+# ---
+
+FROM microsoft/dotnet:6.0-aspnetcore-runtime AS runtime
+
+WORKDIR /app
+
+COPY --from=build-env /app/publish .
+
+EXPOSE 80
+
+ENTRYPOINT ["dotnet", "TylorShop.dll"]
