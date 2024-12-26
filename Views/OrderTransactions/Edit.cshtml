@@ -1,0 +1,66 @@
+﻿@model TylorShop.Models.OrderTransaction
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br />
+<div style="padding-left: 5px; padding-right: 5px;">
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Oid" />
+            <div class="form-group">
+                <label asp-for="Order" class="control-label bangla-text"></label>
+                <select asp-for="Order" class="form-control" asp-items="ViewBag.Order" disabled></select>
+                <input type="hidden" asp-for="Order" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label bangla-text"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionTypeEnum" class="control-label bangla-text"></label>
+                <select asp-for="TransactionTypeEnum" id="TransactionTypeEnumSelect" class="form-control" asp-items="Html.GetEnumSelectList<TransactionTypeEnum>()">
+                    <option value="">--ধরণ নির্বাচন করুন--</option>
+                </select>
+                <span asp-validation-for="TransactionTypeEnum" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for=" TransactionType" id="TransactionTypeEnumHidden" />
+
+            <div class="form-group form-check">
+                <input type="hidden" asp-for="IsActive" id="ActiveHidden" name="IsActive" />
+
+                <input asp-for="Active" class="form-check-input" type="checkbox" id="ActiveCheckbox" />
+                <label asp-for="Active" class="form-check-label">Is Active?</label>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    // Synchronize hidden input with dropdown value
+    document.getElementById('TransactionTypeEnumSelect').addEventListener('change', function () {
+        document.getElementById('TransactionTypeEnumHidden').value = this.value;
+        //alert(this.value)
+    });
+
+     // Get references to the checkbox and hidden input
+    const checkbox = document.getElementById('ActiveCheckbox');
+    const hiddenInput = document.getElementById('ActiveHidden');
+
+    // Add event listener to update hidden input based on checkbox state
+    checkbox.addEventListener('change', function () {
+        hiddenInput.value = checkbox.checked ? 'True' : 'False';
+    });
+</script>

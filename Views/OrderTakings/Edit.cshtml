@@ -1,0 +1,636 @@
+﻿@model TylorShop.Models.OrderTaking
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div style="padding-left: 5px; padding-right: 5px;">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>        
+        <input type="hidden" asp-for="Oid" />
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Customer" class="control-label bangla-text"></label>
+
+                    <select asp-for="Customer" class="form-control" asp-items="ViewBag.Customer" id="customerSearch" style="width: 100%;">
+                        <option value="">-- Search Customer (Name or Contact) --</option>
+                    </select>
+
+                    <span asp-validation-for="Customer" class="text-danger"></span>
+                    <span class="text-danger" id="validationMessage"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group form-check">
+                    <input type="hidden" asp-for="IsReady" id="IsReadyHidden" name="IsReady" />
+
+                    <input class="form-check-input" type="checkbox" id="IsReadyCheckbox" />
+                    <label asp-for="IsReady" class="form-check-label"></label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group form-check">
+                    <input type="hidden" asp-for="IsDelevered" id="IsDeleveredHidden" name="IsDelevered" />
+
+                    <input class="form-check-input" type="checkbox" id="IsDeleveredCheckbox" />
+                    <label asp-for="IsDelevered" class="form-check-label"></label>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group form-check">
+                    <input type="hidden" asp-for="IsCancelled" id="IsCancelledHidden" name="IsCancelled" />
+
+                    <input class="form-check-input" type="checkbox" id="IsCancelledCheckbox" />
+                    <label asp-for="IsCancelled" class="form-check-label"></label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Amount" class="control-label bangla-text"></label>
+                    <input asp-for="Amount" class="form-control" id="Amount" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Discount" class="control-label bangla-text"></label>
+                    <input asp-for="Discount" class="form-control" id="Discount" />
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Advanced" class="control-label bangla-text"></label>
+                    <input asp-for="Advanced" class="form-control" id="Advanced" disabled />
+                    <span asp-validation-for="Advanced" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="DuePaid" class="control-label bangla-text"></label>
+                    <input asp-for="DuePaid" class="form-control" id="DuePaid" disabled />
+                    <span asp-validation-for="DuePaid" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Refund" class="control-label bangla-text"></label>
+                    <input asp-for="Refund" class="form-control" id="Refund" readonly />
+                    <span asp-validation-for="Refund" class="text-danger bangla-text" id="dueValidation"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Due" class="control-label bangla-text"></label>
+                    <input asp-for="Due" class="form-control" id="Due" readonly />
+                    <span asp-validation-for="Due" class="text-danger bangla-text" id="dueValidation"></span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="OrderDate" class="control-label bangla-text"></label>
+                    <input asp-for="OrderDate" class="form-control" type="date" />
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="DelevaryDate" class="control-label bangla-text"></label>
+                    <input asp-for="DelevaryDate" class="form-control" type="date" />
+                    <span asp-validation-for="DelevaryDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                @if (Model != null && Model.Oid > 0)
+                {
+                    <label class="control-label"></label>
+                    <div class="form-group">
+                        <a asp-controller="OrderTransactions" asp-action="Create2" asp-route-Order=@Model.Oid class="btn btn-success">
+                            Transaction
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="Lomba" class="control-label bangla-text"></label>
+                    <input asp-for="Lomba" id="Lomba" class="form-control" />
+                    <span asp-validation-for="Lomba" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="Body" class="control-label bangla-text"></label>
+                    <input asp-for="Body" id="Body" class="form-control" />
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="Pet" class="control-label bangla-text"></label>
+                    <input asp-for="Pet" id="Pet" class="form-control" />
+                    <span asp-validation-for="Pet" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="Put" class="control-label bangla-text"></label>
+                    <input asp-for="Put" id="Put" class="form-control" />
+                    <span asp-validation-for="Put" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="Hat" class="control-label bangla-text"></label>
+                    <input asp-for="Hat" id="Hat" class="form-control" />
+                    <span asp-validation-for="Hat" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="Gola" class="control-label bangla-text"></label>
+                    <input asp-for="Gola" id="Gola" class="form-control" />
+                    <span asp-validation-for="Gola" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label asp-for="LuzHata" class="control-label bangla-text"></label>
+                    <input asp-for="LuzHata" id="LuzHata" class="form-control" />
+                    <span asp-validation-for="LuzHata" class="text-danger"></span>
+                </div>
+            </div>
+            
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="EkChata" class="control-label bangla-text"></label>
+                    <input asp-for="EkChata" class="form-control" />
+                    <span asp-validation-for="EkChata" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="EkCharaJubba" class="control-label bangla-text"></label>
+                    <input asp-for="EkCharaJubba" class="form-control" />
+                    <span asp-validation-for="EkCharaJubba" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Kabli" class="control-label bangla-text"></label>
+                    <input asp-for="Kabli" class="form-control" />
+                    <span asp-validation-for="Kabli" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Serwani" class="control-label bangla-text"></label>
+                    <input asp-for="Serwani" class="form-control" />
+                    <span asp-validation-for="Serwani" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Fotua" class="control-label bangla-text"></label>
+                    <input asp-for="Fotua" class="form-control" />
+                    <span asp-validation-for="Fotua" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="JubbaKalidar" class="control-label bangla-text"></label>
+                    <input asp-for="JubbaKalidar" class="form-control" />
+                    <span asp-validation-for="JubbaKalidar" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Shart" class="control-label bangla-text"></label>
+                    <input asp-for="Shart" class="form-control" />
+                    <span asp-validation-for="Shart" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Borka" class="control-label bangla-text"></label>
+                    <input asp-for="Borka" class="form-control" />
+                    <span asp-validation-for="Borka" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Koti" class="control-label bangla-text"></label>
+                    <input asp-for="Koti" class="form-control" />
+                    <span asp-validation-for="Koti" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label asp-for="Kalider" class="control-label bangla-text"></label>
+                    <input asp-for="Kalider" class="form-control" />
+                    <span asp-validation-for="Kalider" class="text-danger"></span>
+                </div>
+            </div>
+            
+
+        </div>
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Kolar" class="control-label bangla-text"></label>
+                    <input asp-for="Kolar" class="form-control" />
+                    <span asp-validation-for="Kolar" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Plet" class="control-label bangla-text"></label>
+                    <input asp-for="Plet" class="form-control" />
+                    <span asp-validation-for="Plet" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Hata" class="control-label bangla-text"></label>
+                    <input asp-for="Hata" class="form-control" />
+                    <span asp-validation-for="Hata" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Nic" class="control-label bangla-text"></label>
+                    <input asp-for="Nic" class="form-control" />
+                    <span asp-validation-for="Nic" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="NocShohoFara" class="control-label bangla-text"></label>
+                    <input asp-for="NocShohoFara" class="form-control" />
+                    <span asp-validation-for="NocShohoFara" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="NicThekeFara" class="control-label bangla-text"></label>
+                    <input asp-for="NicThekeFara" class="form-control" />
+                    <span asp-validation-for="NicThekeFara" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="PocketThekeBondo" class="control-label bangla-text"></label>
+                    <input asp-for="PocketThekeBondo" class="form-control" />
+                    <span asp-validation-for="PocketThekeBondo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Pocket" class="control-label bangla-text"></label>
+                    <input asp-for="Pocket" class="form-control" />
+                    <span asp-validation-for="Pocket" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label asp-for="Paipen" class="control-label bangla-text"></label>
+                    <input asp-for="Paipen" class="form-control" />
+                    <span asp-validation-for="Paipen" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Selwar" class="control-label bangla-text"></label>
+                    <input asp-for="Selwar" class="form-control" />
+                    <span asp-validation-for="Selwar" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Cosh" class="control-label bangla-text"></label>
+                    <input asp-for="Cosh" class="form-control" />
+                    <span asp-validation-for="Cosh" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Curidar" class="control-label bangla-text"></label>
+                    <input asp-for="Curidar" class="form-control" />
+                    <span asp-validation-for="Curidar" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Naro" class="control-label bangla-text"></label>
+                    <input asp-for="Naro" class="form-control" />
+                    <span asp-validation-for="Naro" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Pant" class="control-label bangla-text"></label>
+                    <input asp-for="Pant" class="form-control" />
+                    <span asp-validation-for="Pant" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Aligori" class="control-label bangla-text"></label>
+                    <input asp-for="Aligori" class="form-control" />
+                    <span asp-validation-for="Aligori" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="PantPocket" class="control-label bangla-text"></label>
+                    <input asp-for="PantPocket" class="form-control" />
+                    <span asp-validation-for="PantPocket" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="CouraRabar" class="control-label bangla-text"></label>
+                    <input asp-for="CouraRabar" class="form-control" />
+                    <span asp-validation-for="CouraRabar" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="CikonRabar" class="control-label bangla-text"></label>
+                    <input asp-for="CikonRabar" class="form-control" />
+                    <span asp-validation-for="CikonRabar" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="MobilePocket" class="control-label bangla-text"></label>
+                    <input asp-for="MobilePocket" class="form-control" />
+                    <span asp-validation-for="MobilePocket" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" id="saveButton" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            //alert("calling");
+            // Initialize Select2
+            $('#customerSearch').select2({
+                placeholder: "--কাস্টমারের নাম অথবা মোবাইল নাম্বার দিয়ে সার্চ করুন --",
+                allowClear: true,
+                ajax: {
+                    url: '/OrderTakings/SearchCustomers', // Controller action for fetching customers
+                    dataType: 'json',
+                    delay: 250, // Delay for search input
+                    data: function (params) {
+                        return {
+                            searchTerm: params.term // Search term entered by the user
+                        };
+                    },
+                    processResults: function (data) {
+                        return {
+                            results: $.map(data, function (item) {
+                                return {
+                                    id: item.id, // Unique identifier for the customer
+                                    text: `${item.name} (${item.contactNumber})` // Display name and contact number
+                                };
+                            })
+                        };
+                    },
+                    cache: true
+                },
+                minimumInputLength: 2 // Minimum characters before triggering search
+            });
+
+            // Handle selection event
+            $('#customerSearch').on('select2:select', function (e) {
+                const selectedId = e.params.data.id;
+
+                // Call the controller action to fetch customer attributes
+                fetch(`/OrderTakings/GetCustomerAttributes?selectedId=${selectedId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            $('#validationMessage').text(data.error);
+                        } else {
+                            // Example: Populate related fields (adjust as needed)
+                            $("#Lomba").val(data.lomba || '');
+                            $("#Body").val(data.body || '');
+                            $("#Pet").val(data.pet || '');
+                            $("#Put").val(data.put || '');
+                            $("#Hat").val(data.hat || '');
+                            $("#Gola").val(data.gola || '');
+                            $("#LuzHata").val(data.luzhata || '');
+                        }
+                    })
+                    .catch(error => {
+                        $('#validationMessage').text("Error fetching customer details.");
+                    });
+            });
+        });
+    </script>
+}
+
+<script>
+        function callControllerAction(selectedId) {
+        if (!selectedId) {
+            alert("No customer selected");
+            return;
+        }
+
+        // Call the controller action
+        fetch(`/OrderTakings/GetCustomerAttributes?selectedId=${selectedId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                    alert(data.error);
+                    return;
+                }
+
+                // Example: Display the returned attributes in the console
+                //console.log("Customer Attributes:", data);
+                // alert(`
+                //     Lomba: ${data.lomba}
+                //     Body: ${data.body}
+                //     Pet: ${data.pet}
+                //     Put: ${data.put}
+                //     Hat: ${data.hat}
+                //     Gola: ${data.gola}
+                //     Luzhata: ${data.luzhata}
+                // `);
+                document.getElementById("Lomba").value = data.lomba || '';
+                document.getElementById("Body").value = data.body || '';
+                document.getElementById("Pet").value = data.pet || '';
+                document.getElementById("Put").value = data.put || '';
+                document.getElementById("Hat").value = data.hat || '';
+                document.getElementById("Gola").value = data.gola || '';
+                document.getElementById("LuzHata").value = data.luzhata || '';
+
+            })
+            .catch(error => {
+                alert("Error calling the controller action:", error);
+            });
+    }
+
+    // Function to calculate and update the Due field
+    function calculateDue() {
+        // Get the input values
+        const amount = parseFloat(document.getElementById('Amount').value) || 0;
+        const discount = parseFloat(document.getElementById('Discount').value) || 0;
+        const advanced = parseFloat(document.getElementById('Advanced').value) || 0;
+        const DuePaid = parseFloat(document.getElementById('DuePaid').value) || 0;
+        const refund = parseFloat(document.getElementById('Refund').value) || 0;
+
+        // Calculate Due
+        const due = amount- DuePaid - discount - advanced +refund;
+
+        // Set the value of the Due field
+        document.getElementById('Due').value = due.toFixed(2); // Round to 2 decimal places
+        saveButton.disabled = due < 0;
+        if (due < 0) {
+                //saveButton.disabled = true;
+                const duevalidation = document.getElementById('dueValidation');
+                duevalidation.textContent = "বাকী টাকা ঋণাত্মক হতে পারবেনা."; // Set error message
+            } else {
+                //saveButton.disabled = false;
+                const duevalidation = document.getElementById('dueValidation');
+                duevalidation.textContent = ""
+                
+            }
+    }
+
+    // Attach event listeners to the input fields
+    document.addEventListener('DOMContentLoaded', () => {
+        const amountInput = document.getElementById('Amount');
+        const discountInput = document.getElementById('Discount');
+        const advancedInput = document.getElementById('Advanced');
+        const refundField = document.getElementById("Refund");
+
+
+        // Recalculate Due when any of the inputs change
+        [amountInput, discountInput, advancedInput].forEach(input => {
+            input.addEventListener('input', calculateDue);
+        });
+        //alert('calling');
+        calculateDue();
+        
+    });
+
+    // Add event listener to update hidden input based on checkbox state
+
+        function updateIsReadyHidden() {
+        const isReadyCheckbox = document.getElementById('IsReadyCheckbox');
+        const isReadyHidden = document.getElementById('IsReadyHidden');
+
+        // Set checkbox state based on hidden input value on load
+        if (isReadyHidden.value === 'True') {
+            isReadyCheckbox.checked = true;
+        } else {
+            isReadyCheckbox.checked = false;
+        }
+
+        // Update hidden input value dynamically when the checkbox is toggled
+        isReadyCheckbox.addEventListener('change', function () {
+            isReadyHidden.value = this.checked ? 'True' : 'False';
+        });
+    }
+    function updateIsDeleveredHidden(){
+        const IsDeleveredCheckbox = document.getElementById('IsDeleveredCheckbox');
+        const isDeleveredHidden = document.getElementById('IsDeleveredHidden');
+        isDeleveredHidden.value = this.checked ? 'True' : 'False';
+
+        }
+    function updateIsCancelledHidden() {
+         const isCancelledCheckbox = document.getElementById('IsCancelledCheckbox');
+         const isCancelledHidden = document.getElementById('IsCancelledHidden');
+         isCancelledHidden.value = isCancelledCheckbox.checked ? 'True' : 'False';
+        }
+            function updateIsDeleveredHidden() {
+        const isDeleveredCheckbox = document.getElementById('IsDeleveredCheckbox');
+        const isDeleveredHidden = document.getElementById('IsDeleveredHidden');
+
+        // Set checkbox state based on hidden input value on load
+        if (isDeleveredHidden.value === 'True') {
+            isDeleveredCheckbox.checked = true;
+        } else {
+            isDeleveredCheckbox.checked = false;
+        }
+
+        // Update hidden input value dynamically when the checkbox is toggled
+        isDeleveredCheckbox.addEventListener('change', function () {
+            isDeleveredHidden.value = this.checked ? 'True' : 'False';
+        });
+    }
+
+    function updateIsCancelledHidden() {
+        const isCancelledCheckbox = document.getElementById('IsCancelledCheckbox');
+        const isCancelledHidden = document.getElementById('IsCancelledHidden');
+
+        // Set checkbox state based on hidden input value on load
+        if (isCancelledHidden.value === 'True') {
+            isCancelledCheckbox.checked = true;
+        } else {
+            isCancelledCheckbox.checked = false;
+        }
+
+        // Update hidden input value dynamically when the checkbox is toggled
+        isCancelledCheckbox.addEventListener('change', function () {
+            isCancelledHidden.value = this.checked ? 'True' : 'False';
+        });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function () {
+        updateIsReadyHidden();
+        updateIsDeleveredHidden();
+        updateIsCancelledHidden();
+    });
+
+</script>
+
+

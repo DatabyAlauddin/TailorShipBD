@@ -1,0 +1,159 @@
+﻿@using TylorShop.Models_Customs
+@* @model IEnumerable<TylorShop.Models.OrderTaking> *@
+@model PaginatedList<TylorShop.Models.OrderTaking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@* <h1>Index</h1> *@
+
+@* <p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p> *@
+<br />
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form asp-action="Index" method="get">
+            <div class="form-group">
+                @* <label for="searchTerm">Search:</label> *@
+                <input type="text" class="form-control" id="searchTerm" placeholder="নাম অথবা মোবাইল নাম্বার দিয়ে সার্চ করুন..." name="searchTerm" value="@ViewData["CurrentFilter"]" />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Search</button>
+            @if (!string.IsNullOrEmpty(ViewData["CurrentFilter"]?.ToString()))
+            {
+                <a href="@Url.Action("Index", "OrderTakings")" class="btn btn-secondary">Clear Search</a>
+            }
+        </form>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+        <nav>
+        <ul class="pagination">
+            @if (Model.HasPreviousPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)">Previous</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+            }
+
+            @for (var i = Math.Max(1, Model.PageIndex - 2); i <= Math.Min(Model.TotalPages, Model.PageIndex + 2); i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" asp-action="Index" asp-route-pageNumber="@i">@i</a>
+                </li>
+            }
+
+            @if (Model.HasNextPage)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)">Next</a>
+                </li>
+            }
+            else
+            {
+                <li class="page-item disabled">
+                    <span class="page-link">Next</span>
+                </li>
+            }
+        </ul>
+    </nav>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr class="bangla-text">
+            <th>
+                @Html.DisplayNameFor(model => model.First().Oid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DelevaryDate)
+            </th>
+
+            <th >
+                @Html.DisplayNameFor(model => model.First().CustomerNavigation.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CustomerNavigation.ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().IsReady)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().IsDelevered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().IsCancelled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Discount)
+            </th>
+
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Oid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DelevaryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerNavigation.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerNavigation.ContactNumber)
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.IsReady) *@
+                    @Html.CheckBox("IsCancelled_" + item.Oid, item.IsReady, new { @disabled = "disabled" })
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.IsDelevered) *@
+                    @Html.CheckBox("IsCancelled_" + item.Oid, item.IsDelevered, new { @disabled = "disabled" })
+            </td>
+            <td>
+                @* @Html.DisplayFor(modelItem => item.IsCancelled) *@
+                @* @Html.CheckBoxFor(modelItem => item.IsCancelled, new { @disabled = "disabled" }) *@
+                @Html.CheckBox("IsCancelled_" + item.Oid, item.IsCancelled, new { @disabled = "disabled" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+
+            <td>
+
+
+                    <a asp-action="Edit" asp-route-id="@item.Oid" class="btn btn-warning btn-sm">Edit</a>
+                @* <a asp-action="Details" asp-route-id="@item.Oid">Details</a> | *@
+                    <a asp-action="Details" asp-route-id="@item.Oid" class="btn btn-info btn-sm">Details</a>
+                @* <a asp-action="Delete" asp-route-id="@item.Oid">Delete</a> *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

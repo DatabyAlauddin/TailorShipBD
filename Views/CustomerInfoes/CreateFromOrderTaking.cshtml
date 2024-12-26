@@ -1,0 +1,127 @@
+﻿@model TylorShop.Models.CustomerInfo
+
+@{
+    ViewData["Title"] = "CreateRouteingCutomer";
+}
+
+<br />
+
+<div style="padding-left: 5px; padding-right: 5px;">
+    <form asp-action="CreateFromOrderTaking">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="CustomerName" class="control-label bangla-text"></label>
+                    <input asp-for="CustomerName" class="form-control" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="ContactNumber" class="control-label bangla-text"></label>
+                    <input asp-for="ContactNumber" class="form-control" />
+                    <span asp-validation-for="ContactNumber" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label bangla-text"></label>
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="GenderEnum" class="control-label bangla-text"></label>
+                    <select asp-for="GenderEnum" id="GenderEnumSelect" class="form-control" asp-items="Html.GetEnumSelectList<GenderEnum>()">
+                        <option value="">--লিঙ্গ নির্বাচন--</option>
+                    </select>
+                    <span asp-validation-for="GenderEnum" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for=" Gender" id="GenderEnumHidden" />
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label asp-for="Age" class="control-label bangla-text"></label>
+                    <input asp-for="Age" class="form-control" />
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Lomba" class="control-label bangla-text"></label>
+                    <input asp-for="Lomba" class="form-control" />
+                    <span asp-validation-for="Lomba" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Body" class="control-label bangla-text"></label>
+                    <input asp-for="Body" class="form-control" />
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Pet" class="control-label bangla-text"></label>
+                    <input asp-for="Pet" class="form-control" />
+                    <span asp-validation-for="Pet" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Put" class="control-label bangla-text"></label>
+                    <input asp-for="Put" class="form-control" />
+                    <span asp-validation-for="Put" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Hat" class="control-label bangla-text"></label>
+                    <input asp-for="Hat" class="form-control" />
+                    <span asp-validation-for="Hat" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="Gola" class="control-label bangla-text"></label>
+                    <input asp-for="Gola" class="form-control" />
+                    <span asp-validation-for="Gola" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label asp-for="LuzHata" class="control-label bangla-text"></label>
+                    <input asp-for="LuzHata" class="form-control" />
+                    <span asp-validation-for="LuzHata" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+     </form>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+    // Synchronize hidden input with dropdown value
+    document.getElementById('GenderEnumSelect').addEventListener('change', function () {
+        document.getElementById('GenderEnumHidden').value = this.value;
+        //alert(this.value)
+    });
+</script>

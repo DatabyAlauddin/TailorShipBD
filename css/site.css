@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+
+
+.bangla-text {
+    font-size: .6rem !important; /* Relative to root font size */
+    font-family: 'SolaimanLipi', 'Arial', sans-serif; 
+}
+

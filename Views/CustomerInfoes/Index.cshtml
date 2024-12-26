@@ -1,0 +1,113 @@
+﻿@using TylorShop.Models_Customs
+@* @model IEnumerable<TylorShop.Models.CustomerInfo> *@
+@model PaginatedList<TylorShop.Models.CustomerInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+<div class="row mb-3">
+    <div class="col-md-6">
+        <form asp-action="Index" method="get">
+            <div class="form-group">
+                @* <label for="searchTerm">Search:</label> *@
+                <input type="text" class="form-control" id="searchTerm" "নাম অথবা মোবাইল নাম্বার দিয়ে সার্চ করুন..." name="searchTerm" value="@ViewData["CurrentFilteronCustomer"]" />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Search</button>
+            @if (!string.IsNullOrEmpty(ViewData["CurrentFilteronCustomer"]?.ToString()))
+            {
+                <a href="@Url.Action("Index", "CustomerInfoes")" class="btn btn-secondary">Clear Search</a>
+            }
+        </form>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+        <nav>
+            <ul class="pagination">
+                @if (Model.HasPreviousPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageIndex - 1)">Previous</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                    </li>
+                }
+
+                @for (var i = Math.Max(1, Model.PageIndex - 2); i <= Math.Min(Model.TotalPages, Model.PageIndex + 2); i++)
+                {
+                    <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@i">@i</a>
+                    </li>
+                }
+
+                @if (Model.HasNextPage)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-action="Index" asp-route-pageNumber="@(Model.PageIndex + 1)">Next</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">Next</span>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ContactNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Address)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderEnum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Oid" class="btn btn-warning btn-sm">Edit</a> 
+                    @* <a asp-action="Details" asp-route-id="@item.Oid" class="btn btn-info">Details</a>  *@
+                @* <a asp-action="Delete" asp-route-id="@item.Oid">Delete</a> *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,212 @@
+﻿@model TylorShop.Models.OrderTaking
+
+
+<br />
+<button onclick="printHalfA4()" class="btn btn-primary btn-sm">Print</button>
+<br>
+
+<div class="half-a4">
+    <form asp-action="Details">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <table>
+        <thead>
+            <tr class="bangla-text">
+                <th>@Html.DisplayNameFor(model => model.Oid)</th>
+                    <th>@Html.DisplayNameFor(model => model.CustomerNavigation.CustomerName)</th>
+                    <th>@Html.DisplayNameFor(model => model.CustomerNavigation.ContactNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.OrderDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.DelevaryDate)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>@Html.DisplayFor(model => model.Oid)</td>
+                    <td>@Html.DisplayFor(model => model.CustomerNavigation.CustomerName)</td>
+                    <td>@Html.DisplayFor(model => model.CustomerNavigation.ContactNumber)</td>
+                    <td>@Html.DisplayFor(model => model.OrderDate)</td>
+                    <td class="fw-bold">@Html.DisplayFor(model => model.DelevaryDate)</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+
+        <table>
+            <thead>
+                <tr class="bangla-text">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Lomba)
+                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Body)
+                        
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Pet)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Put)
+                        
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Hat)
+                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Gola)
+                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LuzHata)
+                     </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> @Html.DisplayFor(model => model.Lomba)</td>
+                    <td> @Html.DisplayFor(model => model.Body)</td>
+                    <td> @Html.DisplayFor(model => model.Pet)</td>
+                    <td> @Html.DisplayFor(model => model.Put)</td>
+                    <td>
+                        @Html.DisplayFor(model => model.Hat)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.Gola)
+                    </td>
+                    <td> @Html.DisplayFor(model => model.LuzHata)</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <table>
+            <thead>
+                <tr class="bangla-text">
+                    <th>
+                        @Html.DisplayNameFor(model => model.EkChata ) 
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EkCharaJubba)
+
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Kabli)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Serwani)
+
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fotua)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.JubbaKalidar)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Shart)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Borka)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Koti)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Kalider)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> @Html.DisplayFor(model => model.EkChata)</td>
+                    <td> @Html.DisplayFor(model => model.EkCharaJubba)</td>
+                    <td> @Html.DisplayFor(model => model.Kabli)</td>
+                    <td> @Html.DisplayFor(model => model.Serwani)</td>
+                    <td>@Html.DisplayFor(model => model.Fotua) </td>
+                    <td> @Html.DisplayFor(model => model.JubbaKalidar)</td>
+                    <td> @Html.DisplayFor(model => model.Shart)</td>
+                    <td> @Html.DisplayFor(model => model.Borka)</td>
+                    <td>@Html.DisplayFor(model => model.Koti)</td>
+                    <td> @Html.DisplayFor(model => model.Kalider)</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <table>
+            <thead>
+                <tr class="bangla-text">
+                    <th> @Html.DisplayNameFor(model => model.Kolar)</th>
+                    <th> @Html.DisplayNameFor(model => model.Plet)</th>
+                    <th> @Html.DisplayNameFor(model => model.Hata)</th>
+                    <th> @Html.DisplayNameFor(model => model.Nic)</th>
+                    <th> @Html.DisplayNameFor(model => model.NocShohoFara)</th>
+                    <th> @Html.DisplayNameFor(model => model.NicThekeFara)</th>
+                    <th> @Html.DisplayNameFor(model => model.PocketThekeBondo)</th>
+                    <th> @Html.DisplayNameFor(model => model.Pocket)</th>
+                    <th> @Html.DisplayNameFor(model => model.Paipen)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.Kolar)</td>
+                    <td>@Html.DisplayFor(model => model.Plet)</td>
+                    <td>@Html.DisplayFor(model => model.Hata)</td>
+                    <td>@Html.DisplayFor(model => model.Nic)</td>
+                    <td>@Html.DisplayFor(model => model.NocShohoFara)</td>
+                    <td>@Html.DisplayFor(model => model.NicThekeFara)</td>
+                    <td>@Html.DisplayFor(model => model.PocketThekeBondo)</td>
+                    <td>@Html.DisplayFor(model => model.Pocket)</td>
+                    <td>@Html.DisplayFor(model => model.Paipen)</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+        <table>
+            <thead>
+                <tr class="bangla-text">
+                    <th> @Html.DisplayNameFor(model => model.Selwar)</th>
+                    <th> @Html.DisplayNameFor(model => model.Cosh)</th>
+                    <th> @Html.DisplayNameFor(model => model.Curidar)</th>
+                    <th> @Html.DisplayNameFor(model => model.Naro)</th>
+                    <th> @Html.DisplayNameFor(model => model.Pant)</th>
+                    <th> @Html.DisplayNameFor(model => model.Aligori)</th>
+                    <th> @Html.DisplayNameFor(model => model.PantPocket)</th>
+                    <th> @Html.DisplayNameFor(model => model.CouraRabar)</th>
+                    <th> @Html.DisplayNameFor(model => model.CikonRabar)</th>
+                    <th> @Html.DisplayNameFor(model => model.MobilePocket)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(model => model.Selwar)</td>
+                    <td>@Html.DisplayFor(model => model.Cosh)</td>
+                    <td>@Html.DisplayFor(model => model.Curidar)</td>
+                    <td>@Html.DisplayFor(model => model.Naro)</td>
+                    <td>@Html.DisplayFor(model => model.Pant)</td>
+                    <td>@Html.DisplayFor(model => model.Aligori)</td>
+                    <td>@Html.DisplayFor(model => model.PantPocket)</td>
+                    <td>@Html.DisplayFor(model => model.CouraRabar)</td>
+                    <td>@Html.DisplayFor(model => model.CikonRabar)</td>
+                    <td>@Html.DisplayFor(model => model.MobilePocket)</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script>
+            function printHalfA4() {
+        var originalContent = document.body.innerHTML;
+        var printContent = document.querySelector('.half-a4').outerHTML;
+
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+
+</script>

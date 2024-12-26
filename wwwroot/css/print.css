@@ -1,0 +1,20 @@
+<style>
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
+    }
+
+    /* Content styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Adjust for half A4 */
+    .half-a4 {
+        height: 148mm; /* Half of A4 height */
+        width: 210mm;  /* Full A4 width */
+        overflow: hidden; /* Ensure no overflow */
+    }
+</style>
