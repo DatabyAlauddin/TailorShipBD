@@ -1,0 +1,11 @@
+[build]
+builder = "Nixpacks"
+
+[build.env]
+DOTNET_ROOT = "/usr/share/dotnet"
+
+[build.commands]
+build = "dotnet publish -c Release -o out"
+
+[start]
+command = "dotnet out/TylorShop.dll"
