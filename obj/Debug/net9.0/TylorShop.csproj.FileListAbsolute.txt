@@ -327,7 +327,6 @@ F:\My Software\TylorShop\obj\Debug\net9.0\staticwebassets\msbuild.build.TylorSho
 F:\My Software\TylorShop\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.TylorShop.props
 F:\My Software\TylorShop\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.TylorShop.props
 F:\My Software\TylorShop\obj\Debug\net9.0\staticwebassets.pack.json
-F:\My Software\TylorShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 F:\My Software\TylorShop\obj\Debug\net9.0\TylorShop.csproj.Up2Date
 F:\My Software\TylorShop\obj\Debug\net9.0\TylorShop.dll
 F:\My Software\TylorShop\obj\Debug\net9.0\refint\TylorShop.dll
@@ -335,3 +334,6 @@ F:\My Software\TylorShop\obj\Debug\net9.0\TylorShop.pdb
 F:\My Software\TylorShop\obj\Debug\net9.0\TylorShop.genruntimeconfig.cache
 F:\My Software\TylorShop\obj\Debug\net9.0\ref\TylorShop.dll
 F:\My Software\TylorShop\obj\Debug\net9.0\TylorShop.sourcelink.json
+F:\My Software\TylorShop\bin\Debug\net9.0\MySqlConnector.dll
+F:\My Software\TylorShop\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
+F:\My Software\TylorShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

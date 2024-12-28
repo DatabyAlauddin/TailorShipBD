@@ -20,7 +20,14 @@ builder.Services.AddSession(options =>
 // Configure database context
 var provider = builder.Services.BuildServiceProvider();
 var config = provider.GetRequiredService<IConfiguration>();
-builder.Services.AddDbContext<AppDbContext>(item => item.UseSqlServer(config.GetConnectionString("DBConnection")));
+//builder.Services.AddDbContext<AppDbContext>(item => item.UseSqlServer(config.GetConnectionString("DBConnection")));
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(config.GetConnectionString("DBConnection"))
+//options.UseMySql(
+//    "Server=mysql.railway.internal;Port=3306;Database=TylorShop;User=root;Password=dTQHntCOzlcRpPgmuqBnIODqsnIwtTos",
+//    new MySqlServerVersion(new Version(8, 0, 31)) // Replace with your MySQL version
+//)
+);
+
 
 
 builder.Services.AddDistributedMemoryCache();
