@@ -7,16 +7,32 @@
       "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:tylorshop.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\controllers\\permissionpolicyuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:controllers\\permissionpolicyuserscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\controllers\\ordertakingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:controllers\\ordertakingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\views\\permissionpolicyusers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:views\\permissionpolicyusers\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\views\\ordertakings\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:views\\ordertakings\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\views\\home\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:views\\home\\home.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\controllers\\customerinfoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:views\\customerinfoes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\controllers\\ordertakingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:controllers\\ordertakingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\views\\ordertransactions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:views\\ordertransactions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\views\\ordertakings\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|solutionrelative:views\\ordertakings\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6194DAA2-8CF3-44CE-81E7-6C441CB78070}|TylorShop.csproj|f:\\my software\\tylorshop\\views\\ordertakings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -50,44 +58,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "PermissionPolicyUsersController.cs",
+              "DocumentMoniker": "F:\\My Software\\TylorShop\\Controllers\\PermissionPolicyUsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PermissionPolicyUsersController.cs",
+              "ToolTip": "F:\\My Software\\TylorShop\\Controllers\\PermissionPolicyUsersController.cs",
+              "RelativeToolTip": "Controllers\\PermissionPolicyUsersController.cs",
+              "ViewState": "AgIAAKAAAACAMzMzMzMwwKYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T17:38:17.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\PermissionPolicyUsers\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\PermissionPolicyUsers\\Edit.cshtml",
+              "ToolTip": "F:\\My Software\\TylorShop\\Views\\PermissionPolicyUsers\\Edit.cshtml",
+              "RelativeToolTip": "Views\\PermissionPolicyUsers\\Edit.cshtml",
+              "ViewState": "AgIAACgAAAAANDMzMzMLwDMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-28T17:37:13.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Home.cshtml",
               "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\Home\\Home.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Home.cshtml",
               "ToolTip": "F:\\My Software\\TylorShop\\Views\\Home\\Home.cshtml",
               "RelativeToolTip": "Views\\Home\\Home.cshtml",
-              "ViewState": "AgIAABwAAAAgMzMzMzMrwCkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAgMzMzMzMrwCwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-28T17:23:11.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\My Software\\TylorShop\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "F:\\My Software\\TylorShop\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAABUAAACgZmZmZmYkwCIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T16:16:17.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "F:\\My Software\\TylorShop\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "F:\\My Software\\TylorShop\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAkAAABgZmZmZmYkwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-28T13:05:55.962Z"
+              "WhenOpened": "2024-12-28T16:16:17.512Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -104,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\CustomerInfoes\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\CustomerInfoes\\Edit.cshtml",
@@ -117,6 +140,44 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\OrderTakings\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\OrderTakings\\Edit.cshtml",
+              "ToolTip": "F:\\My Software\\TylorShop\\Views\\OrderTakings\\Edit.cshtml",
+              "RelativeToolTip": "Views\\OrderTakings\\Edit.cshtml",
+              "ViewState": "AgIAAIcBAAAAQDMzMzMbwJIBAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-28T12:28:02.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderTakingsController.cs",
+              "DocumentMoniker": "F:\\My Software\\TylorShop\\Controllers\\OrderTakingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderTakingsController.cs",
+              "ToolTip": "F:\\My Software\\TylorShop\\Controllers\\OrderTakingsController.cs",
+              "RelativeToolTip": "Controllers\\OrderTakingsController.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAQwOkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-28T12:26:00.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\My Software\\TylorShop\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "F:\\My Software\\TylorShop\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAkAAABgZmZmZmYkwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-28T13:05:55.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CustomerInfoesController.cs",
               "DocumentMoniker": "F:\\My Software\\TylorShop\\Controllers\\CustomerInfoesController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomerInfoesController.cs",
@@ -124,11 +185,12 @@
               "RelativeToolTip": "Controllers\\CustomerInfoesController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAIBJwA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T12:32:43.761Z"
+              "WhenOpened": "2024-12-28T12:32:43.761Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\OrderTakings\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\OrderTakings\\Index.cshtml",
@@ -140,31 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\OrderTakings\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\OrderTakings\\Edit.cshtml",
-              "ToolTip": "F:\\My Software\\TylorShop\\Views\\OrderTakings\\Edit.cshtml",
-              "RelativeToolTip": "Views\\OrderTakings\\Edit.cshtml",
-              "ViewState": "AgIAAH0BAAAAAAAAAEBVwJUBAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-28T12:28:02.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "OrderTakingsController.cs",
-              "DocumentMoniker": "F:\\My Software\\TylorShop\\Controllers\\OrderTakingsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrderTakingsController.cs",
-              "ToolTip": "F:\\My Software\\TylorShop\\Controllers\\OrderTakingsController.cs",
-              "RelativeToolTip": "Controllers\\OrderTakingsController.cs",
-              "ViewState": "AgIAANoAAAAAAAAAAAAQwOkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T12:26:00.23Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "F:\\My Software\\TylorShop\\Views\\OrderTransactions\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\OrderTransactions\\Edit.cshtml",
