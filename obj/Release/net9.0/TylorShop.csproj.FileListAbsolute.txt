@@ -334,3 +334,4 @@ F:\My Software\TylorShop\obj\Release\net9.0\TylorShop.pdb
 F:\My Software\TylorShop\obj\Release\net9.0\TylorShop.genruntimeconfig.cache
 F:\My Software\TylorShop\obj\Release\net9.0\ref\TylorShop.dll
 F:\My Software\TylorShop\bin\Release\net9.0\web.config
+F:\My Software\TylorShop\obj\Release\net9.0\TylorShop.sourcelink.json

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TylorShop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+254c059672d9307538c5fb13442e07331a89b440")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5398ca652e4e4831c06d31633e0af59caaaf4e6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TylorShop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TylorShop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

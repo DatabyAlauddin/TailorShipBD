@@ -1,0 +1,11 @@
+# Use the SDK image to restore dependencies and build the app
+FROM mcr.microsoft.com/dotnet/sdk:9.0.101 AS build
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Copy all project files from your local machine into the /app directory in the container
+COPY . .
+
+# Run dotnet restore to restore dependencies inside the /app directory
+RUN dotnet restore

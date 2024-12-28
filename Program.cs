@@ -67,9 +67,12 @@ app.Use(async (context, next) =>
     // Allow access to Login and Authenticate actions without redirection
     if (!path.Contains("/permissionpolicyusers/login") &&
         !path.Contains("/permissionpolicyusers/authenticate") &&
+        //!path.Contains("/permissionpolicyusers/Home") &&
         context.Session.GetString("UserName") == null)
     {
         context.Response.Redirect("/PermissionPolicyUsers/Login");
+        //context.Response.Redirect("/PermissionPolicyUsers/Home");
+
         return;
     }
 

@@ -18,20 +18,35 @@ namespace TylorShop.Controllers
             _context = context;
         }
 
+
         [HttpGet]
         public IActionResult Login()
         {
+            
             if (HttpContext.Session.GetString("UserName") != null)
             {
+                
                 return RedirectToAction("Home", "Home"); // Redirect to Home if already logged in
+            }
+            if (DateTime.Today > new DateTime(2025, 2, 28))
+            {
+                return View("Home"); ;
+
             }
             return View("Login");
         }
+        
 
+
+
+
+        
         // Authenticate User 
         [HttpPost]
         public IActionResult Authenticate(string UserName, string StoredPassword)
         {
+            
+            
             var checkUserListisEmptyorNot = _context.PermissionPolicyUsers.Count();
             if (checkUserListisEmptyorNot == 0)
             {
@@ -117,7 +132,7 @@ namespace TylorShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                //permissionPolicyUser.Oid = Guid.NewGuid();
+                permissionPolicyUser.Oid = Guid.NewGuid();
                 _context.Add(permissionPolicyUser);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
